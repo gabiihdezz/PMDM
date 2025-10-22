@@ -1,0 +1,8 @@
+<h2>Lista de Personajes</h2>
+<ul>
+  <li *ngFor="let p of personajes; trackBy: trackByNombre">
+    <img [src]="p.foto" [alt]="p.nombre" width="80" height="80" />
+    <strong>{{ p.nombre }}</strong> — Media: {{ p.media }} — Raza: {{ p.raza }}
+    <app-ficha-personaje [personaje]="p"></app-ficha-personaje>
+  </li>
+</ul>
