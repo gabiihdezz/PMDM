@@ -1,16 +1,18 @@
-.circulo {
+.animacion {
+  margin-top: 300px;
   width: 100px;
   height: 100px;
-  background-color: #3f51b5;
-  border-radius: 50%;
+  background-color: #9bb53f;
+  border-radius: 10%;
   animation: crecerReducir 2s infinite;
-  margin: 0 auto;
+  margin: auto;
 }
 
-.container {
+.container {  
   text-align: center;
   max-width: 500px;
   margin: 0 auto;
+  margin-top: 300px;
   padding: 1rem;
 }
 

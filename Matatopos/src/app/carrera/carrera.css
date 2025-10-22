@@ -1,62 +1,55 @@
-.chibi{
-    width: 100px;
-    height: 100px;
-    background-image: url('/images/anubis.png');
-    cursor: pointer;
-    animation: run 1s steps(12) infinite;
-}
-.chibi2{
-    width: 100px;
-    height: 100px;
-    background-image: url('/images/old-guy.png');
-    animation: run 1s steps(12) infinite, animacion1 9.1s infinite;
-}
-.chibi3{
-    width: 100px;
-    height: 100px;
-    background-image: url('/images/hell-knight.png');
-    animation: run 1s steps(12) infinite, animacion1 8s infinite;
-}
-.chibi4{
-    width: 100px;
-    height: 100px;
-    background-image: url('/images/pirate.png');
-    animation: run 1s steps(12) infinite, animacion1 7s infinite;
-}
-.chibi5{
-    width: 100px;
-    height: 100px;
-    background-image: url('/images/succubus.png');
-    animation: run 1s steps(12) infinite, animacion1 6s infinite;
+.fondo {
+  background-image: url('/images/pista23.png');
+  background-repeat: repeat;
+  position: relative;
+  width: 100%;
+  height: 700px;
+  overflow: hidden;
 }
 
-@keyframes animacion1{
-    0%{ 
-        transform: translateX(0) scaleX(1);   
-    }
-    25%{
-        transform: translateX(100px) scaleX(1); 
-    }
-    26%{
-        transform: translateX(500px) scaleX(-1)
-    }
-    75%{
-        transform: translateX(-500px) scaleX(-1);
-    }
-    76%{
-        transform: translateX(-500px) scaleX(1);
-    }
-    0%{ 
-        transform: translateX(0);   
-    }
+* {
+  text-align: center;
 }
 
+.chibi,
+.chibi2,
+.chibi3,
+.chibi4,
+.chibi5 {
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  position: absolute;
+  left: 0;
+  animation: run 1s steps(12) infinite;
+}
 
-@keyframes run{
-    0%{
-        background-position-x:0px;
-    }
-    100%{
-        background-position-x:-1200px;
-    }
+.chibi  { background-image: url('/images/anubis.png');  top: 50px;  animation: run 1s steps(12) infinite, animacion1 10s infinite linear; }
+.chibi2 { background-image: url('/images/old-guy.png'); top: 180px; animation: run 1s steps(12) infinite, animacion1 11s infinite linear; }
+.chibi3 { background-image: url('/images/hell-knight.png'); top: 310px; animation: run 1s steps(12) infinite, animacion1 9s infinite linear; }
+.chibi4 { background-image: url('/images/pirate.png'); top: 440px; animation: run 1s steps(12) infinite, animacion1 8s infinite linear; }
+.chibi5 { background-image: url('/images/succubus.png'); top: 570px; animation: run 1s steps(12) infinite, animacion1 7s infinite linear; }
+
+@keyframes animacion1 {
+  0% {
+    transform: translateX(0) scaleX(1); 
+  }
+  45% {
+    transform: translateX(calc(100vw - 120px)) scaleX(1);
+  }
+  50% {
+    transform: translateX(calc(100vw - 120px)) scaleX(-1);
+  }
+  95% {
+    transform: translateX(0) scaleX(-1); 
+  }
+  100% {
+    transform: translateX(0) scaleX(1); 
+  }
+}
+
+/* ---- ANIMACIÓN DEL SPRITE ---- */
+@keyframes run {
+  0% { background-position-x: 0px; }
+  100% { background-position-x: -1200px; }
 }

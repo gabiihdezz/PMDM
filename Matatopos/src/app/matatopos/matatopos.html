@@ -1,47 +1,24 @@
+<div class="container-fluid">
 <div class="instrucciones">
   <h2>🎮 Instrucciones del juego Mata Topos</h2>
   <p>
     El tablero tiene <strong>9 casillas</strong> dispuestas en una cuadrícula de 3x3.
   </p>
-  <ul>
+  <ol>
     <li>Un <strong>topo</strong> aparece de forma aleatoria en una de las casillas.</li>
     <li>Haz <strong>clic</strong> en la casilla donde aparezca el topo.</li>
     <li>Si aciertas: ganas <strong>+1 punto</strong> y el topo cambia de lugar.</li>
     <li>Si fallas: la puntuación se <strong>reinicia a 0</strong>.</li>
-  </ul>
+  </ol>
   <p>
     El marcador de puntos se muestra debajo del tablero. ¡Intenta conseguir la mayor puntuación posible!
   </p>
 </div>
 
 <div class="tablero">
-    <div class="casilla" (click)="userClick(1)">
-        <div *ngIf="numero ==1" class="topin"></div>
-    </div>
-    <div class="casilla" (click)="userClick(2)">
-        <div *ngIf="numero ==2" class="topin"></div>
-    </div>
-    <div class="casilla" (click)="userClick(3)">
-        <div *ngIf="numero ==3" class="topin"></div>
-    </div>
-    <div class="casilla" (click)="userClick(4)">
-        <div *ngIf="numero ==4" class="topin"></div>
-    </div>
-    <div class="casilla"  (click)="userClick(5)">
-        <div *ngIf="numero ==5" class="topin"></div>
-    </div>
-    <div class="casilla"  (click)="userClick(6)">
-        <div *ngIf="numero ==6" class="topin"></div>
-    </div>
-    <div class="casilla"  (click)="userClick(7)">
-        <div *ngIf="numero ==7" class="topin"></div>
-    </div>
-    <div class="casilla" (click)="userClick(8)">
-        <div *ngIf="numero ==8" class="topin"></div>
-    </div>
-    <div class="casilla" (click)="userClick(9)">
-        <div *ngIf="numero ==9" class="topin"></div>
-    </div>
-    <p>PUNTOS: {{ puntos }}</p>
-
+  <div class="casilla" *ngFor="let i of [1,2,3,4,5,6,7,8,9]" (click)="userClick(i)">
+    <div *ngIf="numero === i" class="topin" [class.halloween]="modoHalloween"></div>
+  </div>
+  <p>PUNTOS: {{ puntos }}</p>
+</div>
 </div>

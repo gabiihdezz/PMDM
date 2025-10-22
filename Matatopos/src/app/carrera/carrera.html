@@ -1,9 +1,21 @@
+<h2>Bienvenidos a la CARRERA</h2>
+<h3>¿Quien ganará?</h3>
+<h3>Tenemos como participantes a: </h3>
+<ul style="display: flex;">
+  <li *ngFor="let c of carrera; trackBy: trackByNombre">
+    <strong>{{ c.nombre }}:</strong>
+    <img [src]="c.foto" [alt]="c.nombre" width="80" height="80" />
+  </li>
+</ul>
+<div class="fondo">
+
 <div class="chibi" (click)="moverse()" [ngStyle]="movChibi1" ></div>
 <div class="chibi2"></div>
 <div class="chibi3"></div>
 <div class="chibi4"></div>
-<div class="chibi5"></div><h2>Carrera</h2>
+<div class="chibi5"></div>
 
 <div class="carrera-container">
   <div class="corredor"></div>
+</div>
 </div>

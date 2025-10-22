@@ -12,6 +12,18 @@
     justify-content: center;
     align-items: center;
 }
+.container-fluid {
+    text-align: center;
+    display: flex;           
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;     
+}
+
+.botones{
+    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+}
 
 .circulo{
     width: 75px;

@@ -1,12 +1,22 @@
 body {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; 
+    align-items: center;     
     margin: 0;
     background: #f0f0f0;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    height: 100vh;           
     flex-direction: column;
 }
+
+.container-fluid {
+    text-align: center;
+    display: flex;           
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;     
+}
+
 
 .tablero {
     display: grid;
@@ -28,16 +38,32 @@ body {
 }
 
 .topin {
-    background-image: url("/topo.png");
-    background-size: cover;
-    background-position: center;
-    width: 100%; 
-    height: 100%;
+  background-image: url("/topo.png");
+  background-size: cover;
+  background-position: center;
+  width: 100%; 
+  height: 100%;
 }
 
+.topin.halloween {
+  background-image: url("/murcielago.png");
+}
+
+
+
 .instrucciones {
-    margin-bottom: 20px;
+    margin: 0 auto 20px auto; 
     padding: 15px;
     border-radius: 8px;
-    max-width: 400px;
+    max-width: 500px;
+    text-align: center;      
+}
+
+.instrucciones ul,
+.instrucciones ol {
+    list-style-position: inside;
+    padding-left: 0;            
+    margin: 0 auto;             
+    display: inline-block;      
+    text-align: left;           
 }

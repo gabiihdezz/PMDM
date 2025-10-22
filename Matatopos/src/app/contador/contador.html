@@ -1,13 +1,18 @@
-<div class="contendor">
+<div class="container-fluid">
+<h2>Semáforo // Contador</h2>
+  <div class="contendor">
     <div *ngIf="numero > 1; else gris" class="circulo rojo"></div>
     <div *ngIf="numero == 1; else gris" class="circulo naranja"></div>
     <div *ngIf="numero == 0; else gris" class="circulo verde"></div>
 </div>
 <p class="num">{{ numero }}</p>
+<div class="botones">
 <button (click)="incrementar()">+1</button>
 <button (click)="decrementar()">-1</button>
 <button (click)="resetear()">Reset</button>
+</div>
 
+</div>
 
 <ng-template #gris>
   <div class="circulo gris"></div>

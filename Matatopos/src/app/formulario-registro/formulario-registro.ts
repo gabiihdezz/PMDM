@@ -39,7 +39,7 @@ export class FormularioRegistro {
   onSubmit() {
     if (this.formulario.valid) {
       const nombre = this.formulario.value.nombre;
-      this.mensajeExito = `🎃 ¡Bienvenido/a, ${nombre}! Tu entrada para la fiesta del castillo ha sido registrada con éxito.`;
+      this.mensajeExito = `¡Bienvenido/a, ${nombre}! Ya estás dentro de la fiesta.`;
       this.formulario.reset();
     } else {
       this.formulario.markAllAsTouched();

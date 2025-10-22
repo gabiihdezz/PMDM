@@ -1,18 +1,41 @@
-<mat-toolbar color="primary">
-  <span class="example-spacer"></span>
-  <span class="opcion" routerLink="/contador">Contador</span>
-  <span class="example-spacer"></span>
-  <span  class="opcion" routerLink="/matatopos">Matatopos</span>
-  <span class="example-spacer"></span>
-  <span class="opcion" routerLink="/carrera">Carrera</span>
-  <span class="example-spacer"></span>
-  <span class="opcion" routerLink="/circulo">Circulo</span>
-  <span class="example-spacer"></span>
-  <span class="opcion" routerLink="/lista-personajes">Lista Personajes</span>
-  <span class="example-spacer"></span>    
-  <span class="opcion" routerLink="/formulario-registro">Formulario</span>
-  <span class="example-spacer"></span>    
-  <span class="opcion">Juego</span>
-  <span class="example-spacer"></span>
-  <span class="opcion">	<mat-icon>bookmark</mat-icon></span>
-</mat-toolbar>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    [mode]="isMobile ? 'over' : 'side'"
+    [opened]="!isMobile && sidenavOpened"
+    [class.halloween]="modoHalloween"
+    (backdropClick)="drawer.close()"
+  >
+    <mat-toolbar color="primary" class="sidenav-header">
+      Menú
+    </mat-toolbar>
+
+    <mat-nav-list>
+      <a mat-list-item routerLink="/circulo" (click)="closeIfMobile(drawer)">Animación</a>
+      <a mat-list-item routerLink="/carrera" (click)="closeIfMobile(drawer)">Carrera</a>
+      <a mat-list-item routerLink="/lista-personajes" (click)="closeIfMobile(drawer)">Lista de Futbolistas</a>
+      <a mat-list-item routerLink="/matatopos" (click)="closeIfMobile(drawer)">Matatopos</a>
+      <a mat-list-item routerLink="/contador" (click)="closeIfMobile(drawer)">Semáforo</a>
+      <a mat-list-item routerLink="/formulario-registro" (click)="closeIfMobile(drawer)">No te lo pierdas</a>
+      <!-- <a mat-list-item (click)="closeIfMobile(drawer)">Siguiente enlace</a> -->
+    </mat-nav-list>
+
+    <div class="toggle-container">
+      <mat-slide-toggle color="accent" (change)="toggleHalloween($event.checked)">
+        🎃 Modo Halloween
+      </mat-slide-toggle>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content [class.halloween-content]="modoHalloween">
+    <mat-toolbar color="primary" class="toolbar">
+      <button mat-icon-button (click)="drawer.toggle()" class="menu-button">
+      </button>
+    </mat-toolbar>
+
+    <div class="contenido">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container> 

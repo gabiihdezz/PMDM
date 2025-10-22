@@ -1,6 +1,10 @@
+*{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 h2 {
   text-align: center;
-  color: #ff7518;
+  color: #ff6600;
   text-shadow: 2px 2px 6px #b30000;
   font-family: 'Creepster', cursive, sans-serif;
   margin-bottom: 15px;
@@ -8,14 +12,6 @@ h2 {
   animation: brillo-titulo 2s infinite alternate;
 }
 
-@keyframes brillo-titulo {
-  from {
-    text-shadow: 0 0 6px #ff7518, 0 0 10px #b30000;
-  }
-  to {
-    text-shadow: 0 0 14px #ff7518, 0 0 20px #ff0000;
-  }
-}
 .form-container {
   display: flex;
   flex-direction: column;
@@ -23,7 +19,7 @@ h2 {
   width: 360px;
   margin: 40px auto;
   padding: 20px;
-  border: 2px solid #ff7518; 
+  border: 2px solid #ff6600; 
   border-radius: 12px;
   box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.4);
   background-color: #1a1a1a;
@@ -49,7 +45,7 @@ input.invalid, select.invalid {
 button {
   margin-top: 12px;
   padding: 10px;
-  background-color: #ff7518;
+  background-color: #ff6600;
   color: #1a1a1a;
   border: none;
   border-radius: 6px;
@@ -84,13 +80,7 @@ button:hover {
 .contador {
   margin-top: 15px;
   font-size: 1rem;
-  color: #ff7518;
+  color: #ff6600;
   font-weight: bold;
   text-align: center;
-  animation: parpadeo 1.5s infinite alternate;
-}
-
-@keyframes parpadeo {
-  from { text-shadow: 0 0 6px #ff7518; }
-  to { text-shadow: 0 0 12px #ff0000; }
-}
+  }

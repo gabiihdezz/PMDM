@@ -3,14 +3,15 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-matatopos',
-  standalone : true,
+  standalone: true,
   imports: [CommonModule],
   templateUrl: './matatopos.html',
-  styleUrl: './matatopos.css'
+  styleUrls: ['./matatopos.css']
 })
 export class Matatopos {
-  puntos=0;
+  puntos = 0;
   numero = Math.floor(Math.random() * 9) + 1;
+  modoHalloween = false;
 
   userClick(casilla: number) {
     if (casilla === this.numero) {
