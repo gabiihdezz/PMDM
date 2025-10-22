@@ -23,7 +23,7 @@
 
     <div class="toggle-container">
       <mat-slide-toggle color="accent" (change)="toggleHalloween($event.checked)">
-        🎃 Modo Halloween
+        🦇 Mood Halloween
       </mat-slide-toggle>
     </div>
   </mat-sidenav>
@@ -31,6 +31,7 @@
   <mat-sidenav-content [class.halloween-content]="modoHalloween">
     <mat-toolbar color="primary" class="toolbar">
       <button mat-icon-button (click)="drawer.toggle()" class="menu-button">
+            <mat-icon>menu</mat-icon>
       </button>
     </mat-toolbar>
 
