@@ -1,7 +1,21 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; 
+}
+
 .sidenav-container {
   height: 100vh;
+  width: 100vw; 
   background-color: #121212;
   color: #fff;
+  overflow: hidden; 
+}
+
+.mat-sidenav-content {
+  height: 100%;
+  overflow-y: auto; 
 }
 
 .sidenav {
@@ -66,7 +80,9 @@
 }
 
 .contenido {
-   color: #fff;
+  color: #fff;
+  padding: 16px;
+  box-sizing: border-box;
 }
 
 .menu-button {

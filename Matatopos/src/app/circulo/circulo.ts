@@ -1,11 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-circulo',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './circulo.html',
-  styleUrl: './circulo.css'
+  styleUrls: ['./circulo.css']
 })
-export class Circulo {
+export class Circulo implements OnInit {
+  modoHalloween: boolean = false;
 
+  ngOnInit() {
+    const stored = localStorage.getItem('modoHalloween');
+    this.modoHalloween = stored === 'true';
+  }
 }

@@ -22,10 +22,12 @@
     </mat-nav-list>
 
     <div class="toggle-container">
-      <mat-slide-toggle color="accent" (change)="toggleHalloween($event.checked)">
-        🦇 Mood Halloween
-      </mat-slide-toggle>
+          <mat-slide-toggle [(ngModel)]="modoHalloween" (ngModelChange)="toggleHalloween()">
+                🦇 Mood Halloween
+        </mat-slide-toggle>
     </div>
+
+
   </mat-sidenav>
 
   <mat-sidenav-content [class.halloween-content]="modoHalloween">
