@@ -17,7 +17,10 @@
 
 <div class="tablero">
   <div class="casilla" *ngFor="let i of [1,2,3,4,5,6,7,8,9]" (click)="userClick(i)">
-    <div *ngIf="numero === i" class="topin" [class.halloween]="modoHalloween"></div>
+    <ng-container *ngIf="numero === i">
+      <div *ngIf="!modoHalloween" class="topin"></div>
+      <div *ngIf="modoHalloween" class="murciegalo"></div>
+    </ng-container>
   </div>
   <p>PUNTOS: {{ puntos }}</p>
 </div>

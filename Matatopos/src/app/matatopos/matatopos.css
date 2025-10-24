@@ -45,8 +45,12 @@ body {
   height: 100%;
 }
 
-.topin.halloween {
+.murciegalo {
   background-image: url("/murcielago.png");
+  background-size: cover;
+  background-position: center;
+  width: 100%; 
+  height: 100%;
 }
 
 
