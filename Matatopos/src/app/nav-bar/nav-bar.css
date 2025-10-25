@@ -60,12 +60,14 @@ html, body {
 }
 
 .toggle-container {
-  padding: 1rem;
+  padding:15px;
+  position: fixed;
+  bottom: 0;
   border-top: 1px solid #444;
   text-align: center;
   color: #fff;
+  z-index: 1000;
 }
-
 .halloween {
   background-color: #ff9100;
   color: #ff6600;

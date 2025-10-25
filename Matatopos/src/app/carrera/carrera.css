@@ -1,5 +1,5 @@
 .fondo {
-  background-image: url('/images/pista23.png');
+  background-image: url('/images/pista2.png');
   background-repeat: repeat;
   position: relative;
   width: 100%;
@@ -7,6 +7,16 @@
   overflow: hidden;
 }
 
+ .fondoHalloween {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  opacity: 0.6; 
+  overflow: hidden;
+  background: url('/images/pista2.png') ;
+}
+ul{
+justify-content: center;}
 * {
   text-align: center;
 }
@@ -23,12 +33,19 @@
   left: 0;
   animation: run 1s steps(12) infinite;
 }
+.joker {
+  width: 41px;              
+  height: 82px;             
+  position: absolute;
+  background-size: cover;
+  }
 
-.chibi  { background-image: url('/images/anubis.png');  top: 50px;  animation: run 1s steps(12) infinite, animacion1 10s infinite linear; }
-.chibi2 { background-image: url('/images/old-guy.png'); top: 180px; animation: run 1s steps(12) infinite, animacion1 11s infinite linear; }
-.chibi3 { background-image: url('/images/hell-knight.png'); top: 310px; animation: run 1s steps(12) infinite, animacion1 9s infinite linear; }
-.chibi4 { background-image: url('/images/pirate.png'); top: 440px; animation: run 1s steps(12) infinite, animacion1 8s infinite linear; }
-.chibi5 { background-image: url('/images/succubus.png'); top: 570px; animation: run 1s steps(12) infinite, animacion1 7s infinite linear; }
+.chibi  { background-image: url('/images/anubis.png');  top: -8px;  animation: run 1s steps(12) infinite, animacion1 10s infinite linear; }
+.chibi2 { background-image: url('/images/old-guy.png'); top: 78px; animation: run 1s steps(12) infinite, animacion1 11s infinite linear; }
+.chibi3 { background-image: url('/images/hell-knight.png'); top: 158px; animation: run 1s steps(12) infinite, animacion1 9s infinite linear; }
+.chibi4 { background-image: url('/images/pirate.png'); top: 258px; animation: run 1s steps(12) infinite, animacion1 8s infinite linear; }
+.chibi5 { background-image: url('/images/succubus.png'); top: 338px; animation: run 1s steps(12) infinite, animacion1 7s infinite linear; }
+.joker  { background-image: url('/halloween/rissitas.png');  top: 438px;  animation: JokerCorre 1s steps(6) infinite, animacion1 10s infinite linear; }
 
 @keyframes animacion1 {
   0% {
@@ -46,6 +63,10 @@
   100% {
     transform: translateX(0) scaleX(1); 
   }
+}
+@keyframes JokerCorre {
+  0% { background-position-x: 0px; }
+  100% { background-position-x: -246px ; }
 }
 
 @keyframes run {

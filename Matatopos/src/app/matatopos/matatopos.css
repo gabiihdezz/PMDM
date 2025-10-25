@@ -22,7 +22,7 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
-    width: 300px; 
+    width: 400px; 
 }
 
 .casilla {
@@ -56,9 +56,9 @@ body {
 
 
 .instrucciones {
-    margin: 0 auto 20px auto; 
     padding: 15px;
     border-radius: 8px;
+    font-size: 20px;
     max-width: 500px;
     text-align: center;      
 }
@@ -70,4 +70,14 @@ body {
     margin: 0 auto;             
     display: inline-block;      
     text-align: left;           
+}
+
+.mensaje-fallo {
+    margin-top: 20px;
+    padding: 10px;
+    border: 2px solid red;
+    color: red;
+    font-size: 20px;
+    border-radius: 5px;
+    font-weight: bold;
 }

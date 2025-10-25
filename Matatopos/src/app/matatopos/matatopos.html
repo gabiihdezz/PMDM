@@ -22,6 +22,10 @@
       <div *ngIf="modoHalloween" class="murciegalo"></div>
     </ng-container>
   </div>
-  <p>PUNTOS: {{ puntos }}</p>
+</div>
+  <p style="font-size: 20px;">PUNTOS: {{ puntos }}</p>
+    <div *ngIf="fallo" class="mensaje-fallo">
+      <p>¡Has fallado! Inténtalo de nuevo.</p>
+
 </div>
 </div>

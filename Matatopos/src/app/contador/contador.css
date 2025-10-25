@@ -1,7 +1,3 @@
-.num{
-    font-size: 50px;
-}
-
 .contendor{
     width: 100px;
     height: 300px;
@@ -21,9 +17,40 @@
     align-items: center;     
 }
 
+.num{
+    font-size: 50px;
+}
+
+.BtnReset{
+    background-color: rgb(255, 111, 111);
+    border: solid 2px black;
+    border-radius: 10px;
+    width: 80px;
+    height: 40px;
+}
+
+.BtnMas1{
+    background-color: rgb(255, 165, 0);
+    border: solid 2px black;
+    border-radius: 10px;
+    width: 80px;
+    height: 40px;
+}
+.BtnMenos1{
+    background-color: rgb(0, 255, 0);
+    border: solid 2px black;
+    border-radius: 10px;
+    width: 80px;
+    height: 40px;
+}
+
 .botones{
     grid-template-columns: repeat(3, 1fr);
     display: grid;
+}
+
+button{
+    margin: 20px;
 }
 
 .circulo{
@@ -35,14 +62,127 @@
 }
 
 .verde{
-    background-color: green;
+    background-color: rgb(13, 197, 13);
 }
 .rojo{
     background-color: red;
 }
 .naranja{
-    background-color: orange;
+     animation: verdeOscuro 1.25s infinite alternate;
 }
-.gris{
-    background-color: rgba(0, 0, 0, 0.158);
+
+.RA{
+    background-color: rgba(107, 6, 6, 0.466);
+}
+.NA{
+    background-color: rgba(143, 65, 1, 0.568);
+}
+.VA{
+    background-color: rgba(2, 63, 2, 0.575);
+}
+@keyframes verdeOscuro {
+    0%{
+        background-color: #ff8f44;
+    }
+    50%{
+        background-color: rgba(143, 65, 1, 0.568);
+    }
+    100%{
+        background-color: #ff8f44;
+    }
+}
+
+
+.fantasmones{
+    display:flex;
+}
+
+.fantasmiko1,
+.fantasmiko2,
+.fantasmiko3 {
+  width: 74px;
+  height: 62px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation-duration: 5s;
+  animation-fill-mode: forwards; 
+}
+
+.fantasmiko1 {
+  background-image: url('/halloween/Ghost1.png');
+  animation-name: ghost1;
+}
+
+.fantasmiko2 {
+  background-image: url('/halloween/Ghost2.png');
+  animation-name: ghost2;
+}
+
+.fantasmiko3 {
+  background-image: url('/halloween/Ghost3.png');
+  animation-name: ghost3;
+}
+
+
+@keyframes ghost1 {
+    0%{
+        transform: translateY(0px);
+    }
+    100%{
+        transform: translate(-1000px, -1000px) scaleX(1);
+    }
+}
+
+@keyframes ghost2 {
+    0%{
+        transform: translateY(0px);
+    }
+    100%{
+        transform: translate(0px, -1000px) scaleX(1);
+    }
+}
+@keyframes ghost3 {
+    0%{
+        transform: translateY(0px);
+    }
+    100%{
+        transform: translate(1000px, -1000px) scaleX(1);
+    }
+}
+
+.coche{
+    background-image: url('/images/corsita.png');
+    width: 200px;
+    height: 120px;
+    background-size: cover;
+    animation: moverCorsa 6s linear ;
+    margin-top: 50px;
+    animation-fill-mode: forwards; 
+}
+.cocheHallo {
+    background-image: url('/halloween/BatiCoche.png');
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    animation: moverCoche 3s linear ;
+    margin-top: 50px;
+    animation-fill-mode: forwards; 
+}
+
+@keyframes moverCoche {
+    0% {
+        transform: translateX(250px);
+    }
+    100% {
+        transform: translateX(100vw);
+    }
+}
+
+@keyframes moverCorsa {
+    0% {
+        transform: translateX(1500px);
+    }
+    100% {
+        transform: translateX(-100vw);
+    }    
 }

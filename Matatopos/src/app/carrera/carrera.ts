@@ -14,6 +14,7 @@ interface Participante {
   styleUrls: ['./carrera.css'] 
 })
 export class Carrera implements OnInit {
+  modoHalloween: boolean = false;
 
   movChibi1 = { transform: 'translate(0px, 0px)' };
   posX: number = 0;
@@ -29,6 +30,8 @@ export class Carrera implements OnInit {
       { nombre: "Pirate", foto: "/images/pirate1.png" },
       { nombre: "Succubus", foto: "/images/succubus1.png" }
     ];
+    const stored = localStorage.getItem('modoHalloween');
+    this.modoHalloween = stored === 'true';
   }
 
   async moverse() {

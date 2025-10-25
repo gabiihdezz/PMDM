@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { interval } from 'rxjs';
@@ -10,14 +10,20 @@ import { interval } from 'rxjs';
   templateUrl: './formulario-registro.html',
   styleUrls: ['./formulario-registro.css']
 })
-export class FormularioRegistro {
+export class FormularioRegistro implements OnInit {
+  modoHalloween: boolean = false;
+
+  ngOnInit() {
+    const stored = localStorage.getItem('modoHalloween');
+    this.modoHalloween = stored === 'true';
+  }
 
   formulario: FormGroup;
   mensajeExito: string = '';
   segundosRestantes: number = 0;
   mensajeCuentaAtras: string = '';
 
-  tiposInvitado: string[] = ['Humano', 'Fantasma', 'Vampiro', 'Bruja'];
+  tiposInvitado: string[] = ['Fantasma', 'Vampiro', 'Zombi', 'Bruja', 'Otro', 'Humano'];
 
   constructor(private fb: FormBuilder) {
     this.formulario = this.fb.group({
@@ -58,16 +64,15 @@ export class FormularioRegistro {
     const diferencia = fechaObjetivo.getTime() - new Date().getTime();
 
     if (diferencia <= 0) {
-      this.mensajeCuentaAtras = '🕛 ¡La noche de los bugs ha comenzado! 💀';
+      this.mensajeCuentaAtras = 'Happy Halloween! 🎃👻';
       return;
     }
 
     const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
     const horas = Math.floor((diferencia / (1000 * 60 * 60)) % 24);
     const minutos = Math.floor((diferencia / (1000 * 60)) % 60);
-    const segundos = Math.floor((diferencia / 1000) % 60);
 
-    this.mensajeCuentaAtras = `⏳ Faltan ${dias} días, ${horas} horas, ${minutos} minutos y ${segundos} segundos para la medianoche de Halloween 🎃`;
+    this.mensajeCuentaAtras = `⏳ Faltan ${dias} días, ${horas} horas y ${minutos} minutos para que empiece el Halloween!`;
   });
 }
 }

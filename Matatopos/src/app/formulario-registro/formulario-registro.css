@@ -71,7 +71,7 @@ button:hover {
 
 .exito {
   margin-top: 20px;
-  color: #00ff00;
+  color: #000000;
   font-size: 1rem;
   font-weight: bold;
   text-align: center;
@@ -80,7 +80,7 @@ button:hover {
 .contador {
   margin-top: 15px;
   font-size: 1rem;
-  color: #ff6600;
+  color: #000000;
   font-weight: bold;
   text-align: center;
   }

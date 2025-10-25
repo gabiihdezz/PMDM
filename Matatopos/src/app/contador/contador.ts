@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-contador',
@@ -8,15 +8,21 @@ import { Component } from '@angular/core';
   templateUrl: './contador.html',
   styleUrl: './contador.css'
 })
-export class Contador {
+export class Contador implements OnInit {
+  modoHalloween: boolean = false;
 
-  numero:number = 10;
+  ngOnInit() {
+    const stored = localStorage.getItem('modoHalloween');
+    this.modoHalloween = stored === 'true';
+  }
+
+  numero:number = 5;
 
   incrementar(){
-    if (this.numero<10)
+    if (this.numero<5)
     this.numero++;
     else
-      this.numero=10;  
+      this.numero=5;  
   }
 
   decrementar(){
@@ -27,7 +33,7 @@ export class Contador {
   }
 
   resetear(){
-    this.numero=10;
+    this.numero=5;
   }
 
 }

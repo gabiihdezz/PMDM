@@ -50,7 +50,8 @@
     @if (f['aceptaReglas'].hasError('required') && f['aceptaReglas'].touched) { Acepte las reglas para poder entrar. }
   </small>
 
-  <button type="submit">Registrar</button>
+  <button *ngIf="modoHalloween" type="submit">Registrar</button>
+  <button *ngIf="!modoHalloween" type="submit" disabled>Happy Halloween</button>
 </form>
 
 <div class="exito" *ngIf="mensajeExito">{{mensajeExito}}</div>

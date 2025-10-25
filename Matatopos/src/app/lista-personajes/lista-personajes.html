@@ -1,8 +1,14 @@
-<h2>Lista de Personajes</h2>
-<ul>
+<h2 style="color:white">Lista de Personajes</h2>
+<ul *ngIf="!modoHalloween">
   <li *ngFor="let p of personajes; trackBy: trackByNombre">
     <img [src]="p.foto" [alt]="p.nombre" width="80" height="80" />
     <strong>{{ p.nombre }}</strong> — Media: {{ p.media }} — Raza: {{ p.raza }}
     <app-ficha-personaje [personaje]="p"></app-ficha-personaje>
+  </li>
+</ul>
+<ul *ngIf="modoHalloween">
+  <li *ngFor="let p of personajesHalloween; trackBy: trackByNombre">
+    <img [src]="p.foto" [alt]="p.nombre" width="80" height="80" />
+    <strong>{{ p.nombre }} {{ p.raza }}</strong> 
   </li>
 </ul>

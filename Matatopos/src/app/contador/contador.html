@@ -1,19 +1,26 @@
 <div class="container-fluid">
 <h2>Semáforo // Contador</h2>
+<div *ngIf="modoHalloween" class="fantasmones">
+  <div class="fantasmiko1"></div>
+  <div class="fantasmiko2"></div>
+  <div class="fantasmiko3"></div>
+</div>
   <div class="contendor">
-    <div *ngIf="numero > 1; else gris" class="circulo rojo"></div>
-    <div *ngIf="numero == 1; else gris" class="circulo naranja"></div>
-    <div *ngIf="numero == 0; else gris" class="circulo verde"></div>
+    <div [ngClass]="numero > 1 ? 'rojo' : 'RA'" class="circulo"></div>
+    <div [ngClass]="numero == 1 ? 'naranja' : 'NA'" class="circulo"></div>
+    <div [ngClass]="numero == 0 ? 'verde' : 'VA'" class="circulo"></div>
 </div>
+
+
 <p class="num">{{ numero }}</p>
-<div class="botones">
-<button (click)="incrementar()">+1</button>
-<button (click)="decrementar()">-1</button>
-<button (click)="resetear()">Reset</button>
-</div>
+  <div class="botones">
+    <button class="BtnMenos1" (click)="incrementar()">+1</button>
+    <button class="BtnMas1" (click)="decrementar()">-1</button>
+    <button class="BtnReset" (click)="resetear()">Reset</button>
+  </div>
 
 </div>
 
-<ng-template #gris>
-  <div class="circulo gris"></div>
-</ng-template>
+<div *ngIf="numero == 0">
+  <div [ngClass]="modoHalloween ? 'cocheHallo' : 'coche'"></div>
+</div>
