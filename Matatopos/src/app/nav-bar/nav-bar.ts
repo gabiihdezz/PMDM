@@ -9,6 +9,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { FormsModule } from '@angular/forms';
 
+
 @Component({
   selector: 'app-nav-bar',
   standalone: true,

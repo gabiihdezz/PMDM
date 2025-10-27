@@ -5,6 +5,7 @@ import { Carrera } from './carrera/carrera';
 import { Circulo } from './circulo/circulo';
 import { ListaPersonajes } from './lista-personajes/lista-personajes';
 import { FormularioRegistro } from './formulario-registro/formulario-registro';
+import { Tablero } from './tablero/tablero';
 
 export const routes: Routes = [
     { path: 'contador', component: Contador},
@@ -13,4 +14,5 @@ export const routes: Routes = [
     { path: 'circulo', component: Circulo},
     { path: 'carrera', component: Carrera}, 
     { path: 'formulario-registro', component: FormularioRegistro},         
+    { path: 'tablero', component: Tablero},         
 ];
