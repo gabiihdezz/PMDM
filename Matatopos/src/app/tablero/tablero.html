@@ -1,10 +1,74 @@
 <h2>Tablero Kanban</h2>
-<div class="container">
-    <div>Añadir </div>
+
+<div class="formulario">
+  <h3>Añadir tarea:</h3>
+  <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <input
+      type="text"
+      id="tarea"
+      formControlName="tarea"
+      placeholder="Escribe una nueva tarea..."
+    />
+    <button  type="submit">➕ Añadir</button>
+  </form>
 </div>
+
 <div class="dragAndDrop">
-        <!-- hacer con un gap que este chulillo  -->
-        <!-- to do  -->
-        <!-- doing -->
-        <!-- done -->
+  <!-- To Do -->
+  <div class="example-container">
+    <h3>To Do</h3>
+    <div
+      cdkDropList
+      #todoList="cdkDropList"
+      [cdkDropListData]="todo"
+      [cdkDropListConnectedTo]="[doingList, doneList]"
+      class="example-list"
+      [ngClass]="!modoHalloween ? 'example-list' : 'example-list-halloween'"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <div class="example-box" *ngFor="let item of todo; let i = index" cdkDrag>
+        {{ item }}
+        <button class="delete-btn" (click)="eliminarTarea('todo', i)">✖</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Doing -->
+  <div class="example-container">
+    <h3>Doing</h3>
+    <div
+      cdkDropList
+      #doingList="cdkDropList"
+      [cdkDropListData]="doing"
+      [cdkDropListConnectedTo]="[todoList, doneList]"
+      class="example-list"
+      [ngClass]="!modoHalloween ? 'example-list' : 'example-list-halloween'"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <div class="example-box" *ngFor="let item of doing; let i = index" cdkDrag>
+        {{ item }}
+        <button class="delete-btn" (click)="eliminarTarea('doing', i)">✖</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Done -->
+  <div class="example-container">
+    <h3>Done</h3>
+    <div
+      cdkDropList
+      #doneList="cdkDropList"
+      [cdkDropListData]="done"
+      [cdkDropListConnectedTo]="[todoList, doingList]"
+      class="example-list"
+      [ngClass]="!modoHalloween ? 'example-list' : 'example-list-halloween'"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <div class="example-box" *ngFor="let item of done; let i = index" cdkDrag>
+        {{ item }}
+        <button class="delete-btn" (click)="eliminarTarea('done', i)">✖</button>
+      </div>
+    </div>
+  </div>
 </div>

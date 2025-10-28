@@ -1,0 +1,131 @@
+.dragAndDrop {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+  justify-items: center;
+}
+
+.example-container {
+  background-color: #1f1f1f;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 320px;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.example-container h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: #ffa31a;
+}
+
+.example-container-halloween h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: #ffa31a;
+}
+
+.example-list {
+  position: relative;
+  min-height: 300px;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.example-list-halloween::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/halloween/joker_cabecera.jpg") center/cover no-repeat;
+  opacity: 0.35;
+  z-index: 0;
+}
+
+.example-list > * {
+  position: relative;
+  z-index: 1;
+}
+
+.example-box {
+  background: rgba(50, 50, 50, 0.8);
+  border-radius: 8px;
+  padding: 12px 40px 12px 12px;
+  color: white;
+  font-size: 15px;
+  cursor: grab;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.2s ease;
+}
+
+.example-box:hover {
+  transform: scale(1.02);
+}
+
+.example-box:active {
+  cursor: grabbing;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: #ff5c5c;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+
+.formulario {
+  text-align: center;
+  margin: 25px 0;
+}
+
+.formulario form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.formulario input[type="text"] {
+  padding: 10px;
+  width: 250px;
+  border-radius: 8px;
+  border: 2px solid #555;
+  background-color: #222;
+  color: white;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.formulario input[type="text"]:focus {
+  border-color: #ff9800;
+  background-color: #333;
+}
+
+.formulario button,
+.formulario input[type="submit"] {
+  background-color: #ff9800;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
