@@ -1,10 +1,12 @@
 <mat-sidenav-container class="sidenav-container">
+  
   <mat-sidenav
     #drawer
     class="sidenav"
     [mode]="isMobile ? 'over' : 'side'"
     [opened]="!isMobile && sidenavOpened"
     [class.halloween]="modoHalloween"
+    [class.navidad]="modoNavidad"
     (backdropClick)="drawer.close()"
   >
     <mat-toolbar color="primary" class="sidenav-header">
@@ -21,16 +23,27 @@
       <a *ngIf="modoHalloween" mat-list-item routerLink="/formulario-registro" (click)="closeIfMobile(drawer)">No te lo pierdas</a>
     </mat-nav-list>
 
-    <div class="toggle-container">
-          <mat-slide-toggle [(ngModel)]="modoHalloween" (ngModelChange)="toggleHalloween()">
-                🦇 Mood Halloween
-        </mat-slide-toggle>
-    </div>
+<div class="toggle-container">
+  <mat-slide-toggle
+    color="accent"
+    [(ngModel)]="modoHalloween"
+    (ngModelChange)="toggleHalloween($event)">
+    🎃 Modo Halloween
+  </mat-slide-toggle>
+
+  <mat-slide-toggle
+    color="warn"
+    [(ngModel)]="modoNavidad"
+    (ngModelChange)="toggleNavidad($event)">
+    🎄 Modo Navidad
+  </mat-slide-toggle>
+</div>
+
 
 
   </mat-sidenav>
 
-  <mat-sidenav-content [class.halloween-content]="modoHalloween">
+  <mat-sidenav-content [class.halloween-content]="modoHalloween" [class.navidad-content]="modoNavidad">
     <mat-toolbar color="primary" class="toolbar">
       <button mat-icon-button (click)="drawer.toggle()" class="menu-button">
             <mat-icon>menu</mat-icon>

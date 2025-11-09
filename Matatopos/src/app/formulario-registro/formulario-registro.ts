@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { interval } from 'rxjs';
+import { StorageService } from '../services/local-storage';
 
 @Component({
   selector: 'app-formulario-registro',
@@ -25,7 +26,7 @@ export class FormularioRegistro implements OnInit {
 
   tiposInvitado: string[] = ['Fantasma', 'Vampiro', 'Zombi', 'Bruja', 'Otro', 'Humano'];
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private almacenamiento: StorageService) {
     this.formulario = this.fb.group({
       nombre: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
@@ -75,4 +76,22 @@ export class FormularioRegistro implements OnInit {
     this.mensajeCuentaAtras = `⏳ Faltan ${dias} días, ${horas} horas y ${minutos} minutos para que empiece el Halloween!`;
   });
 }
+
+  // mostrar(){
+  //     if(this.formulario.invalid){
+  //       console.log("El formulario contiene errores.");
+  //     }else {
+  //       console.log(this.formulario.value);
+  //       this.almacenamiento.setNombre(this.formulario.value.nombre);
+  //     }
+
+  // }
+
+  resetear(){
+    this.formulario.reset({
+      nombre: '',
+      email: ''
+    });
+  }
+
 }

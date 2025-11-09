@@ -5,10 +5,12 @@
   <div class="fantasmiko2"></div>
   <div class="fantasmiko3"></div>
 </div>
-  <div class="contendor">
+<div class="contenedor">
+    <div [ngClass]="modoNavidad ? 'contenedorNevado' : 'contenedor'">
     <div [ngClass]="numero > 1 ? 'rojo' : 'RA'" class="circulo"></div>
     <div [ngClass]="numero == 1 ? 'naranja' : 'NA'" class="circulo"></div>
     <div [ngClass]="numero == 0 ? 'verde' : 'VA'" class="circulo"></div>
+  </div>
 </div>
 
 
@@ -22,5 +24,5 @@
 </div>
 
 <div *ngIf="numero == 0">
-  <div [ngClass]="modoHalloween ? 'cocheHallo' : 'coche'"></div>
+  <div [ngClass]="modoNavidad ? 'Trineo' : (modoHalloween ? 'cocheHallo' : 'coche')"></div>
 </div>

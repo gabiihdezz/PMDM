@@ -12,9 +12,11 @@ import { FichaPersonaje, Personaje } from '../ficha-personaje/ficha-personaje';
 export class ListaPersonajes implements OnInit {
 
   modoHalloween: boolean = false;
+  modoNavidad: boolean = false;
 
    personajes: Personaje[] = [];
   personajesHalloween: Personaje[] = [];
+  personajesNavidad: Personaje[] = [];
 
   ngOnInit(): void {
     this.personajes = [
@@ -31,9 +33,18 @@ export class ListaPersonajes implements OnInit {
       { nombre: "Michael Myers", raza: "🔪", media: 0, foto:"/halloween/MichaelMyers.webp" },
       { nombre: "Pennywhise", raza: "🤡", media: 0, foto:"/halloween/it.jpg" },
     ];
+      this.personajesNavidad = [
+      { nombre: "Rey Melchor", raza: "🤴🏻", media: 99, foto:"/navidad/RM.jpg" },
+      { nombre: "Rey Gaspar", raza: "🤴🏽", media: 99, foto:"/navidad/RG.jpg" },
+      { nombre: "Rey Baltasar", raza: "🎅", media: 99, foto:"/navidad/RB.jpg" },
+      { nombre: "Papa Noel", raza: "🎅", media: 99, foto:"/navidad/papanoel.jpg" },
+      { nombre: "Camello", raza: "🐫", media: 99, foto:"/navidad/camello.jpg" },
+    ];
  
-    const stored = localStorage.getItem('modoHalloween');
-    this.modoHalloween = stored === 'true';
+    const storedH = localStorage.getItem('modoHalloween');
+    const storedN = localStorage.getItem('modoNavidad');
+    this.modoHalloween = storedH === 'true';
+    this.modoNavidad = storedN === 'true';
  
   }
 

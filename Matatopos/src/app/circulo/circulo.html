@@ -1,6 +1,9 @@
+  <div [ngClass]="modoNavidad ? 'granizo' : (modoHalloween ? 'container' : 'container')">
 <div class="container">
   <h2 style="margin-bottom: 50px;">Animación</h2>
+  <div [ngClass]="modoNavidad ? 'granizada' : (modoHalloween ? 'fant' : 'animacion')"></div>
+<div *ngIf="modoNavidad" class="santa"></div>
 
-  <div *ngIf="!modoHalloween" class="animacion"></div>
-  <div *ngIf="modoHalloween" class="fant"></div>
+<div *ngIf="modoNavidad" class="montanica"></div>
+</div>
 </div>

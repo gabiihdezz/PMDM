@@ -60,13 +60,29 @@ html, body {
 }
 
 .toggle-container {
-  padding:15px;
+  padding: 15px;
   position: fixed;
   bottom: 0;
   border-top: 1px solid #444;
-  text-align: center;
+  text-align: left; /* mejor alineación visual */
   color: #fff;
   z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.mat-slide-toggle {
+  display: flex;
+  align-items: center; /* centra el icono y texto verticalmente */
+  font-size: 15px;
+}
+
+.mat-slide-toggle-content {
+  display: flex;
+  align-items: center;
+  gap: 6px; /* separación entre emoji y texto */
 }
 .halloween {
   background-color: #ff9100;
@@ -95,4 +111,16 @@ html, body {
   .sidenav {
     width: 200px;
   }
+}
+.navidad {
+  background-color: #06be1f;
+  color: #00ac2b;
+}
+
+.navidad-content {
+  background-image: url('/navidad/hogarFN.png');
+  color: #fff;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }

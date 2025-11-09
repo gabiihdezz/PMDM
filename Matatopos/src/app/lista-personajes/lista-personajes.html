@@ -1,5 +1,5 @@
 <h2 style="color:white">Lista de Personajes</h2>
-<ul *ngIf="!modoHalloween">
+<ul *ngIf="!modoHalloween && !modoNavidad">
   <li *ngFor="let p of personajes; trackBy: trackByNombre">
     <img [src]="p.foto" [alt]="p.nombre" width="80" height="80" />
     <strong>{{ p.nombre }}</strong> — Media: {{ p.media }} — Raza: {{ p.raza }}
@@ -8,6 +8,12 @@
 </ul>
 <ul *ngIf="modoHalloween">
   <li *ngFor="let p of personajesHalloween; trackBy: trackByNombre">
+    <img [src]="p.foto" [alt]="p.nombre" width="80" height="80" />
+    <strong>{{ p.nombre }} {{ p.raza }}</strong> 
+  </li>
+</ul>
+<ul *ngIf="modoNavidad">
+  <li *ngFor="let p of personajesNavidad; trackBy: trackByNombre">
     <img [src]="p.foto" [alt]="p.nombre" width="80" height="80" />
     <strong>{{ p.nombre }} {{ p.raza }}</strong> 
   </li>

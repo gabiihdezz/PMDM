@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { StorageService } from '../services/local-storage';
 
 @Component({
   selector: 'app-matatopos',
@@ -33,9 +34,19 @@ export class Matatopos implements OnInit {
       this.fallo=true;
     }
   }
-    ngOnInit() {
-    const stored = localStorage.getItem('modoHalloween');
-    this.modoHalloween = stored === 'true';
-  }
+     modoNavidad: boolean = false;
+   
+     constructor(private storage: StorageService) {}
+   
+   ngOnInit() {
+     this.modoHalloween = this.storage.getItem('modoHalloween') === 'true';
+     this.modoNavidad = this.storage.getItem('modoNavidad') === 'true';
+   }
+   
+   guardarModos() {
+     this.storage.setItem('modoHalloween', this.modoHalloween.toString());
+     this.storage.setItem('modoNavidad', this.modoNavidad.toString());
+   }
+   
 
 }

@@ -55,3 +55,85 @@
     transform: translate(0, 0) scaleX(1); 
   }
 }
+
+.granizo {
+  background-image: url('/navidad/nevando1.png');
+  background-repeat: repeat;
+  width: 100vw;           
+  height: 100vh;          
+  animation: caerNieve 10s linear infinite;
+  position: fixed;        
+  top: 0;
+  left: 0;
+  z-index: 10;             
+  pointer-events: none;    
+}
+.montanica {
+  background-image: url('/navidad/montanica.png');
+  background-repeat: repeat;
+  width: 100vw;
+  height: 130px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+  transform: translateY(50px);
+  animation: aparecerMontana 5s ease-in forwards;
+}
+
+.santa{
+  background-image: url('/navidad/santa_Pared.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  left: 200px;
+  z-index: 15;
+  animation: AhoraSN 3s linear infinite;
+}
+
+@keyframes AhoraSN {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateX(40px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+
+
+}
+@keyframes aparecerMontana {
+  0% {
+    background-position: 0 0%;
+  }
+  100% {
+    background-position: 0 160%;
+  }
+}
+
+
+@keyframes caerNieve {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 100%;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .granizo {
+    animation-duration: 10s;
+  }
+}
+
+@media (min-width: 1600px) {
+  .granizo {
+    animation-duration: 6s; 
+  }
+}

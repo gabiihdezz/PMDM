@@ -1,3 +1,4 @@
+
 <div class="container-fluid">
 <div class="instrucciones">
   <h2>🎮 Instrucciones del juego Mata Topos</h2>
@@ -18,8 +19,9 @@
 <div class="tablero">
   <div class="casilla" *ngFor="let i of [1,2,3,4,5,6,7,8,9]" (click)="userClick(i)">
     <ng-container *ngIf="numero === i">
-      <div *ngIf="!modoHalloween" class="topin"></div>
+      <div *ngIf="!modoHalloween && !modoNavidad" class="topin"></div>
       <div *ngIf="modoHalloween" class="murciegalo"></div>
+      <div *ngIf="modoNavidad" class="reno"></div>
     </ng-container>
   </div>
 </div>

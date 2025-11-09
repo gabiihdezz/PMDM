@@ -1,4 +1,4 @@
-.contendor{
+.contenedor{
     width: 100px;
     height: 300px;
     background-color: #57565C;
@@ -9,6 +9,18 @@
     justify-content: center;
     align-items: center;
 }
+
+.contenedorNevado{
+    background-image: url('/navidad/uonevado.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center ;
+    width: 103px;
+    border-radius: 10px;
+    z-index:2;   
+    margin-top:-4px; 
+}
+
 .container-fluid {
     text-align: center;
     display: flex;           
@@ -56,8 +68,9 @@ button{
 .circulo{
     width: 75px;
     height: 75px;
-    margin: 15px;
+    margin: 15px auto ;
     border-radius: 50%;
+    z-index:30;   
     border: solid 2px black;
 }
 
@@ -150,6 +163,8 @@ button{
     }
 }
 
+
+
 .coche{
     background-image: url('/images/corsita.png');
     width: 200px;
@@ -169,6 +184,16 @@ button{
     animation-fill-mode: forwards; 
 }
 
+.Trineo{
+    background-image: url('/navidad/Trineo.png');
+    width: 400px;
+    height: 200px;
+    background-size: cover;
+    animation: Trineo 3s linear ;
+    margin-top: 50px;
+    animation-fill-mode: forwards; 
+}
+
 @keyframes moverCoche {
     0% {
         transform: translateX(250px);
@@ -184,5 +209,15 @@ button{
     }
     100% {
         transform: translateX(-100vw);
+    }    
+}
+
+@keyframes Trineo {
+    0% {
+        transform: translate(0px, -10vw) scaleX(1); 
+    }
+    100% {
+        transform: translate(1250px, -1000px) scaleX(1); 
+
     }    
 }
