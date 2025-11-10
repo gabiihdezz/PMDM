@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { CdkDrag, CdkDropList, CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { StorageService } from '../services/local-storage';
 
 @Component({
   selector: 'app-tablero',
@@ -16,19 +17,26 @@ export class Tablero implements OnInit {
   doing: string[] = [];
   done: string[] = [];
 
-  constructor(private fb: FormBuilder) {
+  modoHalloween: boolean = false;
+  modoNavidad: boolean = false;
+
+  // ✅ Constructor combinado
+  constructor(private fb: FormBuilder, private storage: StorageService) {
     this.formulario = this.fb.group({
       tarea: ['', [Validators.required]],
     });
   }
 
-  modoHalloween: boolean = false;
-
   ngOnInit() {
-    this.cargarTareas();
-    const stored = localStorage.getItem('modoHalloween');
-    this.modoHalloween = stored === 'true';
+    this.modoHalloween = this.storage.getItem('modoHalloween') === 'true';
+    this.modoNavidad = this.storage.getItem('modoNavidad') === 'true';
 
+    this.cargarTareas();
+  }
+
+  guardarModos() {
+    this.storage.setItem('modoHalloween', this.modoHalloween.toString());
+    this.storage.setItem('modoNavidad', this.modoNavidad.toString());
   }
 
   onSubmit() {

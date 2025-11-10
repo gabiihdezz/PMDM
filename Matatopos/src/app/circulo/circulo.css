@@ -108,7 +108,7 @@
 }
 @keyframes aparecerMontana {
   0% {
-    background-position: 0 0%;
+    background-position: 0 -2%;
   }
   100% {
     background-position: 0 160%;

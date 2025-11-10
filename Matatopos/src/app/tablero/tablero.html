@@ -15,18 +15,18 @@
 
 <div class="dragAndDrop">
   <!-- To Do -->
-  <div class="example-container">
+  <div class="container">
     <h3>To Do</h3>
     <div
       cdkDropList
       #todoList="cdkDropList"
       [cdkDropListData]="todo"
       [cdkDropListConnectedTo]="[doingList, doneList]"
-      class="example-list"
-      [ngClass]="!modoHalloween ? 'example-list' : 'example-list-halloween'"
+      class="lista"
+      [ngClass]="modoNavidad ? 'lista-navidad1' :  modoHalloween ? 'lista-halloween' : 'lista'" 
       (cdkDropListDropped)="drop($event)"
     >
-      <div class="example-box" *ngFor="let item of todo; let i = index" cdkDrag>
+      <div class="box" *ngFor="let item of todo; let i = index" cdkDrag>
         {{ item }}
         <button class="delete-btn" (click)="eliminarTarea('todo', i)">✖</button>
       </div>
@@ -34,18 +34,18 @@
   </div>
 
   <!-- Doing -->
-  <div class="example-container">
+  <div class="container">
     <h3>Doing</h3>
     <div
       cdkDropList
       #doingList="cdkDropList"
       [cdkDropListData]="doing"
       [cdkDropListConnectedTo]="[todoList, doneList]"
-      class="example-list"
-      [ngClass]="!modoHalloween ? 'example-list' : 'example-list-halloween'"
+      class="lista"
+      [ngClass]="modoNavidad ? 'lista-navidad2' :  modoHalloween ? 'lista-halloween' : 'lista'" 
       (cdkDropListDropped)="drop($event)"
     >
-      <div class="example-box" *ngFor="let item of doing; let i = index" cdkDrag>
+      <div class="box" *ngFor="let item of doing; let i = index" cdkDrag>
         {{ item }}
         <button class="delete-btn" (click)="eliminarTarea('doing', i)">✖</button>
       </div>
@@ -54,18 +54,18 @@
 
 
   <!-- Done -->
-  <div class="example-container">
+  <div class="container">
     <h3>Done</h3>
     <div
       cdkDropList
       #doneList="cdkDropList"
       [cdkDropListData]="done"
       [cdkDropListConnectedTo]="[todoList, doingList]"
-      class="example-list"
-      [ngClass]="!modoHalloween ? 'example-list' : 'example-list-halloween'"
+      class="lista"
+      [ngClass]="modoNavidad ? 'lista-navidad3' :  modoHalloween ? 'lista-halloween' : 'lista'" 
       (cdkDropListDropped)="drop($event)"
     >
-      <div class="example-box" *ngFor="let item of done; let i = index" cdkDrag>
+      <div class="box" *ngFor="let item of done; let i = index" cdkDrag>
         {{ item }}
         <button class="delete-btn" (click)="eliminarTarea('done', i)">✖</button>
       </div>

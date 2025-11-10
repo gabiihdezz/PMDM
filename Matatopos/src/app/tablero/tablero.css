@@ -6,7 +6,7 @@
   justify-items: center;
 }
 
-.example-container {
+.container {
   background-color: #1f1f1f;
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
@@ -19,19 +19,19 @@
   overflow: hidden;
 }
 
-.example-container h3 {
+.container h3 {
   margin-bottom: 0.5rem;
   font-size: 1.2rem;
   color: #ffa31a;
 }
 
-.example-container-halloween h3 {
+.container-halloween h3 {
   margin-bottom: 0.5rem;
   font-size: 1.2rem;
   color: #ffa31a;
 }
 
-.example-list {
+.lista {
   position: relative;
   min-height: 300px;
   border-radius: 10px;
@@ -42,7 +42,7 @@
   overflow: hidden;
 }
 
-.example-list-halloween::before {
+.lista-halloween::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -51,12 +51,36 @@
   z-index: 0;
 }
 
-.example-list > * {
+.lista-navidad1::before {
+  background: url("/navidad/melchor.jpg") center/cover no-repeat;
+}
+.lista-navidad2::before {
+  background: url("/navidad/gaspar.jpg") center/cover no-repeat;
+}
+.lista-navidad3::before {
+  background: url("/navidad/baltasar.jpg") center/cover no-repeat;
+}
+
+.lista-navidad1::before,
+.lista-navidad2::before,
+.lista-navidad3::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.35;
+  z-index: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+.lista > * {
   position: relative;
   z-index: 1;
 }
 
-.example-box {
+.box {
   background: rgba(50, 50, 50, 0.8);
   border-radius: 8px;
   padding: 12px 40px 12px 12px;
@@ -69,11 +93,11 @@
   transition: transform 0.2s ease;
 }
 
-.example-box:hover {
+.box:hover {
   transform: scale(1.02);
 }
 
-.example-box:active {
+.box:active {
   cursor: grabbing;
 }
 
